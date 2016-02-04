@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="http://bike.synapsia.sk/favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
 <form action="index.php" method="post">
@@ -75,6 +75,9 @@ if (isset($_POST['submit'])) {
  }
  if ($_POST['search']=="charge") {
    print "Ak si nasiel charge blender niekde na predaj, prosim kontaktuj mna na bike@synapsia.sk";
+   print "If you find black charge blender with bomber fork somewhere on net, please contact me on bike@synapsia.sk"; 
+   # Ak si nasiel charge blender niekde na predaj, prosim kontaktuj mna na bike@synapsia.sk
+   # If you find black charge blender with bomber fork somewhere on net, please contact me on bike@synapsia.sk
 # $command = "python bikesearch.py charge 2>&1";
  }
  if ($_POST['search']=="mrazek") {
@@ -102,7 +105,7 @@ if (isset($_POST['submit'])) {
  $openf .= $l;
  file_put_contents($file, $openf);
 
-#  $command = "python bikesearch.py mondraker 2>&1";
+#  $command = "python bikesearch.py mongoose 2>&1";
   $pid = popen( $command,"r");
   while( !feof( $pid ) )
   {

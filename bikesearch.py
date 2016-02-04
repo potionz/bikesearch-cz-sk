@@ -42,7 +42,6 @@ def dolekop():
  except:
   print "Inzerat neexistuje, alebo error na dolekop.com"
 
-
 def cyklobazar():
  url="http://www.cyklobazar.cz/kola?q=" + bikesearch
  try:
