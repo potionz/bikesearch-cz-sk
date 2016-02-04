@@ -30,7 +30,8 @@ import sys
 from lxml import html
 
 #print sys.argv[1]
-bikesearch = sys.argv[1] 
+#bikesearch = sys.argv[1] 
+bikesearch = mongoose
 
 print "Search for: " + bikesearch + "<hr>"
 
