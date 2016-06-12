@@ -74,8 +74,9 @@ if (isset($_POST['submit'])) {
   $command = "python bikesearch.py caprnka 2>&1";
  }
  if ($_POST['search']=="charge") {
-   print "Ak si nasiel charge blender niekde na predaj, prosim kontaktuj mna na bike@synapsia.sk";
-   print "If you find black charge blender with bomber fork somewhere on net, please contact me on bike@synapsia.sk"; 
+   print "Ak si nasiel <b>charge blender</b> niekde na predaj, prosim kontaktuj mna na <b>bike@synapsia.org</b><br>";
+   print "If you find black charge blender with bomber fork somewhere on net, please contact me on bike@synapsia.org<br><br><hr>"; 
+   $command = "python bikesearch.py charge 2>&1";
    # Ak si nasiel charge blender niekde na predaj, prosim kontaktuj mna na bike@synapsia.sk
    # If you find black charge blender with bomber fork somewhere on net, please contact me on bike@synapsia.sk
 # $command = "python bikesearch.py charge 2>&1";

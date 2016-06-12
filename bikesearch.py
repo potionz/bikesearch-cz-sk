@@ -29,8 +29,8 @@ def dolekop():
   htmlISO = htmlSource.decode('ISO-8859-2')
   htmlUTF = htmlISO.encode('UTF-8')
   
-  startBazar = '<h2>Bazar</h2>'
-  endBazar = '<br class="cistic"'
+  startBazar = '<h2>Nalezené inzeráty</h'
+  endBazar = '<div data-sticky_column="" class="sidebar">'
   
   dolekopbazar = htmlUTF.split(startBazar)[1].split(endBazar)[0]
   
