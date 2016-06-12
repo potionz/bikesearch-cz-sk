@@ -26,13 +26,13 @@ def dolekop():
   htmlSource = sock.read()
   sock.close() 
 
-  htmlISO = htmlSource.decode('ISO-8859-2')
-  htmlUTF = htmlISO.encode('UTF-8')
+#  htmlISO = htmlSource.decode('ISO-8859-2')
+#  htmlUTF = htmlISO.encode('UTF-8')
   
-  startBazar = '</form><h2>Nalezen'
+  startBazar = '</form><h2>Nalezené'
   endBazar = '<div data-sticky_column="" class="sidebar">'
   
-  dolekopbazar = htmlUTF.split(startBazar)[1].split(endBazar)[0]
+  dolekopbazar = htmlSource.split(startBazar)[1].split(endBazar)[0]
   
   dolekopSource = re.sub('=\"/','=\"http://dolekop.com/', dolekopbazar)
  
