@@ -48,7 +48,8 @@ def cyklobazar():
   htmlS = cOpen(url)
  
   startBazar = '<div class="page-header">'
-  endBazar = '<div class="col-right">'
+#  endBazar = '<div class="col-right">'
+  endBazar = '<div class="box-smile box-smile--right">'
  
   cyklobazar = htmlS.split(startBazar)[1].split(endBazar)[0]
   cykloSource = re.sub('=\"/','=\"http://cyklobazar.cz/', cyklobazar)
@@ -128,7 +129,7 @@ def sbazar():
   
   sbazar = htmlS.split(startBazar)[1].split(endBazar)[0]
   sbazarSource = re.sub('href=\"/','href=\"http://www.sbazar.cz/', sbazar)
-  sbazarSource = re.sub('img=\"/','img=\"http://', sbazarSource)
+  sbazarSource = re.sub('data\-origin=\"/','><img src=\"http:/', sbazarSource)
   
   print "sbazar.cz:<br>"
   print sbazarSource

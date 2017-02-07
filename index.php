@@ -11,6 +11,9 @@
 
   Search for bike on cz/sk bike bazars<br>
   <input type="radio" name="search" value="enduro"> Search for enduro.<br>
+  <input type="radio" name="search" value="YT"> Search for YT.<br>
+  <input type="radio" name="search" value="wicked"> Search for wicked.<br>
+  <input type="radio" name="search" value="trek"> Search for Trek.<br>
   <input type="radio" name="search" value="onone"> Search for on-one.<br>
   <input type="radio" name="search" value="ragley"> Search for ragley.<br>
   <input type="radio" name="search" value="mongoose"> Search for mongoose.<br>
@@ -46,6 +49,15 @@ if (isset($_POST['submit'])) {
  if ($_POST['search']=="enduro") {
   $command = "python bikesearch.py enduro 2>&1";
  }
+ if ($_POST['search']=="YT") {
+  $command = "python bikesearch.py YT 2>&1";
+ }
+ if ($_POST['search']=="wicked") {
+  $command = "python bikesearch.py wicked 2>&1";
+ }  
+ if ($_POST['search']=="trek") {
+  $command = "python bikesearch.py trek 2>&1";
+ }    
  if ($_POST['search']=="nsbike") {
   $command = "python bikesearch.py ns+bike 2>&1";
  }
