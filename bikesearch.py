@@ -71,10 +71,13 @@ def cyklobazar():
   endBazar = '<div class="box-smile box-smile--right">'
  
   cyklobazar = htmlS.split(startBazar)[1].split(endBazar)[0]
-  cykloSource = re.sub('=\"/','=\"http://cyklobazar.cz/', cyklobazar)
- 
+  cykloSource = re.sub('=\"/','=\"https://www.cyklobazar.cz/', cyklobazar)
+  cykloS = re.sub('url\(','url\(www\\.cyklobazar\\.cz', cykloSource)
+  cykloI = re.sub('data-cfsrc','><img src', cykloS)
+  cykloV = re.sub('style="display:none;visibility:hidden;"','', cykloI)
+
   print "Cyklobazar.cz:<br>" 
-  print cykloSource 
+  print cykloV 
   print "<hr>"
  except:
   print "Inzerat neexistuje, alebo error na cyklobazar.cz"
