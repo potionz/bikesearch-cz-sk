@@ -3,6 +3,8 @@
 
 import cgitb
 import urllib2
+import httplib
+import ssl
 import re
 import sys
 from lxml import html
@@ -11,6 +13,21 @@ from lxml import html
 bikesearch = sys.argv[1] 
 
 print "Search for: " + bikesearch + "<hr>"
+
+
+#sslsock=httplib.HTTPSConnection("www.cyklobazar.cz")
+#sslsock.request("GET", "/kola?q=mrazek")
+#response = sslsock.getresponse()
+#htmlSource = response.read()
+#print htmlSource
+
+
+def sOpen(url,search):
+ sslsock=httplib.HTTPSConnection(url)
+ sslsock.request("GET", "/"+search)
+ response = sslsock.getresponse()
+ htmlSource = response.read()
+ return htmlSource
 
 def cOpen(url):
  sock=urllib2.urlopen(url)
@@ -43,9 +60,11 @@ def dolekop():
   print "Inzerat neexistuje, alebo error na dolekop.com"
 
 def cyklobazar():
- url="http://www.cyklobazar.cz/kola?q=" + bikesearch
+# url=("www.cyklobazar.cz/kola?q=" + bikesearch +"")
+ url=("www.cyklobazar.cz")
+ search=("kola?q="+bikesearch)
  try:
-  htmlS = cOpen(url)
+  htmlS = sOpen(url,search)
  
   startBazar = '<div class="page-header">'
 #  endBazar = '<div class="col-right">'
